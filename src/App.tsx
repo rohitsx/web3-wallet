@@ -1,23 +1,12 @@
-import useWallet from './assets/hooks/useWallet';
+import { useNavigate } from 'react-router-dom';
 import './App.css';
 
 function App() {
-
-  const wallet = useWallet();
-
-
-  return (
-    <>
-      <div>
-        solana address <br />private key: {wallet.getSolanaAddress().privateKey} <br />public key: {wallet.getSolanaAddress().publicKey}
-      </div>
-      <br />
-      <div>
-        ethrium address <br /> 
-      </div>
-
-    </>
-  );
+  const navigate = useNavigate();
+  return <div>
+    <button onClick={() => navigate('/solana')}>Solona Wallet</button>
+    <button onClick={() => navigate('/ethereum')}>Ethereum Wallet</button>
+  </div>
 }
 
 export default App;
