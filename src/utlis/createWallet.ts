@@ -55,13 +55,13 @@ export default class Wallet {
     public async getETHAddress(ethereumIndex: number): Promise<address> {
         const seed = await mnemonicToSeed(this.mnemonic);
         const hdNode = HDNodeWallet.fromSeed(seed);
-        const child = hdNode.derivePath(`m/44'/60'/${ethereumIndex}'/0'`);
+        const child = hdNode.derivePath(`m/44'/60'/0'/0/${ethereumIndex}`);
         const privateKey = child.privateKey;
         const wallet = new etherWallet(privateKey);
 
         return {
-            privateKey: wallet.address,
-            publicKey: wallet.privateKey
+            privateKey: wallet.privateKey,
+            publicKey: wallet.address
         };
     }
 

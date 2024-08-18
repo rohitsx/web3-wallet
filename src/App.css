@@ -1,0 +1,242 @@
+/* App.css */
+
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --background-color: #2d3436;
+    --surface-color: #353b48;
+    --text-color: #dfe6e9;
+    --accent-color: #00b894;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+h1,
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    background-color: var(--surface-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+.nav-item {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+button {
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
+    margin-bottom: 1rem;
+    
+}
+
+button:hover {
+    background-color: #5348c7;
+}
+
+/* Input Fields */
+input[type="text"] {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
+    padding: 0.75rem;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.input-container {
+    display: flex;
+    gap: 1rem;
+    /* Adjust the gap between the input and button */
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+
+/* Card Styles */
+/* ... (keep the previous CSS, but update these parts) ... */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(33.333% - 0.667rem);
+    min-width: 250px;
+    box-sizing: border-box;
+}
+
+
+.seed-phrase-card {
+    background-color: #353b48;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.wallet-card {
+    background-color: #353b48;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.toggle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    color: #6c5ce7;
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.toggle-icon.open {
+    transform: rotate(180deg);
+}
+
+.toggle-header h2 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.toggle-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.toggle-content.open {
+    max-height: 500px;
+}
+
+.wallet-address {
+    background-color: #2d3436;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: #dfe6e9;
+    word-break: break-all;
+}
+
+/* Add this new style for a compact list */
+.compact-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.compact-list span {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Balance Section */
+.balance-section {
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.balance-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* ... (keep the rest of the CSS) ... */
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+    .card {
+        width: calc(50% - 0.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}

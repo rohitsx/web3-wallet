@@ -1,11 +1,13 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
-    const navigate = useNavigate();
-    return <div>
-        <div onClick={() => navigate('/solana')}>Solana Wallet</div>
-        <div onClick={() => navigate('/ethereum')}>Ethereum Wallet</div>
-        <div onClick={() => navigate('/balances')}>ETH/SOL Balances</div>
-        <div onClick={() => navigate('/')}>Mnemonic</div>
-    </div>
+    return (
+        <nav className="nav-bar">
+            <div className="nav-container">
+                <Link to="/solana" className="nav-item">Solana Wallet</Link>
+                <Link to="/" className="nav-item">Mnemonic</Link>
+                <Link to="/ethereum" className="nav-item">Ethereum Wallet</Link>
+            </div>
+        </nav>
+    );
 }
