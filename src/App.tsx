@@ -4,8 +4,10 @@ import './App.css';
 function App() {
   const navigate = useNavigate();
   return <div>
-    <button onClick={() => navigate('/solana')}>Solona Wallet</button>
-    <button onClick={() => navigate('/ethereum')}>Ethereum Wallet</button>
+    <div onClick={() => navigate('/')}>Go Back</div>
+    <div onClick={() => navigate('/solana')}>Solona Wallet</div>
+    <div onClick={() => navigate('/ethereum')}>Ethereum Wallet</div>
+    <div onClick={() => navigate('/balances')}>ETH/SOL Balances</div>
   </div>
 }
 

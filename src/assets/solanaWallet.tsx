@@ -1,14 +1,23 @@
 import useWallet from './hooks/useWallet';
 import { useEffect, useRef, useState } from 'react';
+import NavBar from './navBar';
 
 export default function SolanaWallet() {
   const wallet = useWallet();
   const seedPhrase = useRef(wallet.getMnemonic().split(' '));
   const [solanaIndex, setSolanaIndex] = useState(0);
   const [address, setAddress] = useState([wallet.getSolanaAddress(solanaIndex)]);
+  const [balances, setBalances] = useState<string | null>(null);
+  const [solanaAddress, setSolanaAdress] = useState<string>('');
 
   function addWallet() {
     setSolanaIndex(prev => prev + 1);
+  }
+
+  function returnBalance() {
+    wallet.getSolanaBalance(solanaAddress).then(balanceInstance => {
+      setBalances(balanceInstance)
+    })
   }
 
   useEffect(() => {
@@ -20,6 +29,7 @@ export default function SolanaWallet() {
 
   return (
     <div>
+      <NavBar />
       <h1>Solana Wallet</h1>
       <div>
         <div>Your Seed Phrase</div>
@@ -36,9 +46,16 @@ export default function SolanaWallet() {
               <div>{addr.publicKey}</div>
               <div>Private Key</div>
               <div>{addr.privateKey}</div>
+              <div></div>
             </div>
           ))}
         </div>
+      </div>
+      <div>
+        <div>Get Solana Balance</div>
+        <input type="text" name="as" onChange={(e) => setSolanaAdress(e.target.value)} id="" />
+        <input type="button" onClick={returnBalance} value="Submit" />
+        <div>{balances}</div>
       </div>
     </div>
   );
