@@ -2,6 +2,10 @@
 
 A simple, user-friendly cryptocurrency wallet application supporting Solana and Ethereum blockchains.
 
+## 🌐 Live Demo
+
+Check out the live version of the project: [Live](https://wallet.devrohit.tech/)
+
 ## Features
 
 - Generate and manage multiple wallet addresses for Solana and Ethereum
