@@ -15,8 +15,6 @@ Check out the live version of the project: [Live](https://wallet.devrohit.tech/)
 
 - React
 - TypeScript
-- CSS3
-- Web3 libraries for Solana and Ethereum interactions
 
 ## Getting Started
 ```
